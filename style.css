@@ -1,0 +1,215 @@
+:root {
+    --page-bg: #0f0f11;     /* very dark outer background */
+    --calc-bg: #2a2a2c;    /* lighter gray calculator surface */
+    --btn: #3a3a3c;        /* button gray */
+    --text: #f2f2f7;
+    --op: #ff9f0a;
+}
+
+.light {
+    --page-bg: #e5e5ea;     /* outer background */
+    --calc-bg: #f2f2f7;     /* calculator surface */
+    --btn: #ffffff;
+    --text: #1c1c1e;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255, 255, 255, 0.04),
+            rgba(0, 0, 0, 0) 60%
+        ),
+        linear-gradient(
+            180deg,
+            var(--page-bg),
+            #0b0b0c
+        );
+    transition: background 0.3s ease;
+}
+
+.light body {
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(0, 0, 0, 0.04),
+            rgba(0, 0, 0, 0) 60%
+        ),
+        linear-gradient(
+            180deg,
+            var(--page-bg),
+            #dcdce1
+        );
+}
+
+body {
+    background-color: var(--page-bg);
+}
+
+#calculator {
+    background-color: var(--calc-bg);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.45);
+}
+
+#calculator {
+    width: 360px;
+    padding: 20px;
+    border-radius: 30px;
+    background-color: var(--bg);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+#top-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+#top-bar button {
+    background: none;
+    border: none;
+    color: var(--text);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#display {
+    width: 100%;
+    height: 120px;
+    font-size: 4.5rem;
+    text-align: right;
+    padding: 20px 28px;   /* ⬅️ extra right padding */
+    box-sizing: border-box;
+    border: none;
+    background-color: transparent;
+    color: var(--text);
+    outline: none;
+}
+
+#display {
+    letter-spacing: 1px;
+}
+
+#keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+button {
+    height: 80px;
+    border-radius: 50%;
+    border: none;
+    font-size: 2rem;
+    background-color: var(--btn);
+    color: var(--text);
+    cursor: pointer;
+    transition: transform 0.05s ease, filter 0.15s ease;
+}
+
+button:active {
+    transform: scale(0.96);
+}
+
+.operator-btn {
+    background-color: var(--op);
+}
+
+.operator-btn.active {
+    background-color: white;
+    color: var(--op);
+}
+
+.equals {
+    grid-row: span 2;
+}
+
+.zero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-column: span 1;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    padding: 0;
+    line-height: 1;
+}
+
+#scientific {
+    display: none;
+    margin-top: 15px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+#scientific.show {
+    display: grid;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#calculator {
+    border: 1px solid rgba(255,255,255,0.06);
+}
+
+.light #calculator {
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.branding {
+    position: fixed;
+    bottom: 24px;
+    right: 28px;
+    text-align: right;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text);
+    opacity: 0.35;
+    user-select: none;
+    pointer-events: none;
+}
+
+.brand-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.brand-sub {
+    font-size: 0.75rem;
+    opacity: 0.7;
+    margin-top: 2px;
+}
+
+.time-panel {
+    position: fixed;
+    left: 32px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text);
+    opacity: 0.45;
+    user-select: none;
+    pointer-events: none;
+}
+
+#time {
+    font-size: 3.2rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+#date {
+    margin-top: 6px;
+    font-size: 0.95rem;
+    opacity: 0.7;
+}
