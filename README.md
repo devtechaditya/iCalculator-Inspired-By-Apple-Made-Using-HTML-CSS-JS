@@ -64,3 +64,13 @@ Every visual choice was refined step by step.
  ┣ 🎨 style.css
  ┣ ⚙️ index.js
  ┗ 📘 README.md
+```
+
+---
+
+## 📸 Snapshots
+
+<p align="center">
+  <img src="Dark Mode.png" alt="Dark Mode" width="45%">
+  <img src="Light Mode.png" alt="Light Mode" width="45%">
+</p>
